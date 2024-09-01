@@ -8,9 +8,29 @@ pragma circom 2.1.4;
 
 // HINT:NEGATION
 
+template NotZero() {
+    signal input in;
+    signal output out;
+
+    signal inv;
+
+    inv <-- in!=0 ? 1/in : 0;
+
+    out <== in*inv;
+}
+
 template NotEqual() {
 
-    // Your code here.
+    signal input a[2];
+    signal output c;
+
+    component isz = NotZero();
+    
+
+    isz.in <== (a[1] - a[0]);
+
+    c <== isz.out;
+
    
 }
 

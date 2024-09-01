@@ -23,42 +23,23 @@ template IsEqual() {
     isz.out ==> out;
 }
 
-// // Input 3 values using 'a'(array of length 3) and check if they all are equal.
-// // Return using signal 'c'.
-// template Equality() {
-//     signal input a[3];
-//     signal output c; // 1 Equal, 0 False
-
-//     // a[0] == a[1] ?
-//     component check1 = IsEqual();
-//     check1.in[0] <== a[0];
-//     check1.in[1] <== a[1];
-
-//     // a[1] == a[2] ?
-//     component check2 = IsEqual();
-//     check2.in[0] <== a[1];
-//     check2.in[1] <== a[2];
-
-//     // constraint inspired by
-//     // https://github.com/iden3/circomlib/blob/master/circuits/gates.circom#L29-L35
-//     //
-//     // a[0] == a[1] && a[1] == a[2]
-//     c <== check1.out * check2.out;
-// }
-
 template Equality(){
-    signal input a;
-    signal output b;
-    signal c;
-    
-    b <== a * 5;
-    c <-- a * 5;
+    signal input a[3];
+    signal output c;
 
-    component isE = IsEqual();
-    isE.in[0] <== b;
-    isE.in[1] <== c;
-    
 
+
+    component isE1 = IsEqual();
+    isE1.in[0] <== a[0];
+    isE1.in[1] <== a[1];
+
+
+
+    component isE2 = IsEqual();
+    isE2.in[0] <== a[0];
+    isE2.in[1] <== a[2];
+
+    c <== isE1.out * isE2.out;
 }
 
 component main = Equality();    

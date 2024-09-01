@@ -2,6 +2,23 @@
 
 Zero knowledge puzzles to learn writing circuits in [circom](https://docs.circom.io/) lang.
 
+## WIP
+
+- [X] Addition
+- [X] AllBinary
+- [X] Addition
+- [X] BinaryXY
+- [X] Equality
+- [X] FourBitBinary
+- [X] NotEqual
+- [X] Poseidon
+- [X] ForLoop
+- [X] Power
+- [X] Range
+- [X] Salt
+- [X] QuadraticEquation
+- [X] Compile
+
 ## Installation
 
 ### Rust
