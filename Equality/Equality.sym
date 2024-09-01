@@ -1,0 +1,9 @@
+1,1,2,main.b
+2,-1,2,main.a
+3,2,2,main.c
+4,3,1,main.isE.out
+5,-1,1,main.isE.in[0]
+6,-1,1,main.isE.in[1]
+7,-1,0,main.isE.isz.out
+8,-1,0,main.isE.isz.in
+9,4,0,main.isE.isz.inv
